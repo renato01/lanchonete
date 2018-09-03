@@ -21,8 +21,20 @@
     <link href="static/css/one-page-wonder.min.css" rel="stylesheet">
 
   </head>
-
+  
   <body>
+      
+      <div class=" alert alert-warning" style="margin-top: -40px">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+      </div>
 
       {% block content %}
       {% endblock %}
@@ -38,7 +50,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Log In</a>
+              <a href="/pedido">Faça seu pedido</a>
             </li>
           </ul>
         </div>

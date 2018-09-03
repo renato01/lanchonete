@@ -47,18 +47,3 @@ class Food(db.Model):
 
 	def __repr__(self):
 		return "<Food %r>" % self.name
-
-class Request(db.Model):
-	id = db.Column(db.Integer, primary_key=True)
-	user_id = db.Column(db.Integer, db.ForeignKey(User.id))
-	food_id = db.Column(db.Integer, db.ForeignKey(Food.id))
-	user = db.relationship('Users', foreign_keys='user_id')
-	food = db.relationship('Foods', foreign_keys='food_id')
-
-	def __int__(self, user_id, food_id):
-		self.user_id = user_id
-		self.food_id = food_id
-
-	def __repr__(self):
-		return "<Request %r>" % self.id
-

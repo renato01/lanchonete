@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<form action="" method="POST">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <h2 style="text-align: center; margin-top: 20% ">
+        Pedido
+      </h2>
+      {{ form.csrf_token }}
+      <div class="form-group">
+        <label>Lanche</label>
+        {{ form.lanche(class="form-control", placeholder="Nome do lanche") }}
+      </div>
+      <div class="form-group">
+        <label>Bebida</label>
+        {{ form.bebida(class="form-control", placeholder="Bebida") }}
+      </div>
+      <div class="form-group">
+        <label>Bairro</label>
+        {{ form.bairro(class="form-control") }}
+      </div>
+      <div>
+        <label>Endereço</label>
+        {{ form.endereco(class="form-control", placeholder="Digite o endere / telefone") }}
+      </div>
+      <div class="form-group">
+        {{ form.troco}} Troco
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar Pedido</button>
+      <!-- <div class="form-group">
+        <label for="disabledSelect">Lanche</label> 
+        <select id="disabledSelect" class="form-control">
+          <option>BigBoy</option>
+          <option>X-Tudo</option>
+          <option>X-Montanha</option>
+          <option>X-Baicon</option>
+          <option>X-Calabresa</option> 
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="disabledSelect">Bebida</label>
+        <select id="disabledSelect" class="form-control">
+          <option>Coca-Cola</option>
+          <option>Fanta Laranja</option>
+          <option>Fanta Uva</option>
+          <option>Guaravita</option>
+          <option>Suco de Goiaba</option> 
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="disabledSelect">Bairro</label>
+        <select id="disabledSelect" class="form-control">
+          <option>Nova Holanda</option>
+          <option>Parque União</option>
+          <option>Pinheiro</option>
+          <option>Baixa</option>
+        </select>
+      </div>
+      <div class="form-group form-group-lg">
+        <label>Large label</label>
+        <div>
+          <input class="form-control" type="text" id="formGroupInputLarge" placeholder="Endereço / telefone">
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary">Enviar</button> -->
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</form>
+{% endblock %}
