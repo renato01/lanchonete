@@ -3,7 +3,6 @@ from flask_login import login_user
 from app import app, db
 
 from app.models.tables import User, Food 
-from app.models.forms import LoginForm
 from app.models.forms import PedidoForm
 
 @app.route("/")

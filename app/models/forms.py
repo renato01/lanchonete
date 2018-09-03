@@ -3,11 +3,6 @@ from wtforms import StringField, PasswordField, BooleanField, SelectField
 from wtforms.validators import DataRequired
 
 
-class LoginForm(FlaskForm):
-	username = StringField("username", validators=[DataRequired()])
-	password = PasswordField("password", validators=[DataRequired()])
-	remember_me = BooleanField("remember_me")
-
 class PedidoForm(FlaskForm):
 	lanche = StringField("lanche", validators=[DataRequired()])
 	bebida = StringField("bebida", validators=[DataRequired()])
